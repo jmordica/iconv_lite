@@ -1,6 +1,6 @@
-# mysql2
+# iconv_lite
 
-MySQL client for Deno with focus on performance. Supports prepared statements, non-utf8 encodings, binary log protocol, compression much more
+Pure JS character encoding conversion
 
 ## usage
 ```ts
