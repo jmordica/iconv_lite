@@ -1,0 +1,44 @@
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License.
+ *  REQUIREMENT: This definition is dependent on the @types/node definition.
+ *  Install with `npm install @types/node --save-dev`
+ *--------------------------------------------------------------------------------------------*/
+import type { Buffer } from "./deps.ts";
+import type { ReadWriteStream } from "./deps.ts";
+
+declare module 'iconv_lite' {
+  // Basic API
+  export function decode(buffer: Buffer | Uint8Array, encoding: string, options?: Options): string;
+
+  export function encode(content: string, encoding: string, options?: Options): Buffer;
+
+  export function encodingExists(encoding: string): boolean;
+
+  // Stream API
+  
+  export function decodeStream(encoding: string, options?: Options): ReadWriteStream;
+
+  export function encodeStream(encoding: string, options?: Options): ReadWriteStream;
+
+  // Low-level stream APIs
+  export function getEncoder(encoding: string, options?: Options): EncoderStream;
+
+  export function getDecoder(encoding: string, options?: Options): DecoderStream;
+}
+
+export interface Options {
+  stripBOM?: boolean;
+  addBOM?: boolean;
+  defaultEncoding?: string;
+}
+
+export interface EncoderStream {
+  write(str: string): Buffer;
+  end(): Buffer | undefined;
+}
+
+export interface DecoderStream {
+  write(buf: Buffer): string;
+  end(): string | undefined;
+}
