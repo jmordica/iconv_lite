@@ -4,7 +4,7 @@ Pure JS character encoding conversion
 
 ## usage
 ```ts
-import { assertEquals } from "https://deno.land/std@0.139.0/testing/asserts.ts";
+import { assertEquals } from "https://deno.land/std@0.142.0/testing/asserts.ts";
 import { decode, encode } from "https://deno.land/x/iconv_lite@v1.0.0/mod.ts";
 
 const testString = "Hello123!";
