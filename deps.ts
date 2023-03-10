@@ -1,6 +1,6 @@
-import { Buffer } from "https://deno.land/std/node/buffer.ts";
-import type { ReadWriteStream } from "https://deno.land/std/node/_global.d.ts";
-import { StringDecoder } from "https://deno.land/std/node/string_decoder.ts";
+import { Buffer } from "node:buffer";
+import type { ReadWriteStream } from "node:_global.d.ts";
+import { StringDecoder } from "node:string_decoder";
 
 export {
   Buffer,
